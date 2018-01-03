@@ -1,24 +1,26 @@
-# When done, submit this entire file to the autograder.
+# When done, submit this entire file to thqp-hwhe autograder.
 
 # Part 1
 
 def sum arr
     #arr.reduce(0, :+)
-    arr.inject(0,:+);
+    sum = 0;
+    arr.inject(sum,:+);
 end
 
 def max_2_sum arr
-  arr.max(2).reduce(0,:+);
+    sum = 0;
+    arr.max(2).reduce(sum,:+);
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.combination(2).any?{|a,b| a+b == n}
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, #{name}";
 end
 
 def starts_with_consonant? s
