@@ -24,7 +24,12 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+    #/^[b-df-hj-np-tv-z]/i.match(s) != nil
+    if /^[^aeiou\W]/i.match(s) == nil
+        false
+    else
+        true
+    end
 end
 
 def binary_multiple_of_4? s
