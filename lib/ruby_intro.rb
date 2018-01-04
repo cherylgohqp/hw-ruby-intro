@@ -25,9 +25,11 @@ end
 
 def starts_with_consonant? s
     #i added at the back to make it case insensitive
+    #downcase makes it lowercase
     #[^aeiou]: not vowels
     # ^ infront to show that this is applicable for the first character
-    if /^[^aeiou\W]/i.match(s) == nil
+    #alternatively: /^[^aeiou\W]/i.match(s) == nil
+    if /^[^aeiou\W]/.match(s.downcase) == nil
         false
     else
         true
@@ -35,7 +37,29 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+    
+   # value = s.to_i(2);
+    #example: "1100101".to_i(2) => gives 101
+#    if s=="0"
+ #       true
+  #  end
+    
+   # if value<4
+    #    false
+    #elsif value%4==0
+     #   true
+    #else
+    #    false
+
+    #end
+    value = /[^01]/
+    if(value==s)
+        false
+    elsif(s.to_i(2) %4 ==0)
+        true
+    else
+        false
+    end
 end
 
 # Part 3
