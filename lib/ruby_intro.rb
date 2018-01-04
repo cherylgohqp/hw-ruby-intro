@@ -24,7 +24,9 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-    #/^[b-df-hj-np-tv-z]/i.match(s) != nil
+    #i added at the back to make it case insensitive
+    #[^aeiou]: not vowels
+    # ^ infront to show that this is applicable for the first character
     if /^[^aeiou\W]/i.match(s) == nil
         false
     else
