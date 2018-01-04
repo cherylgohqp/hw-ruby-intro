@@ -29,7 +29,7 @@ def starts_with_consonant? s
     #[^aeiou]: not vowels
     # ^ infront to show that this is applicable for the first character
     #alternatively: /^[^aeiou\W]/i.match(s) == nil
-    if /^[^aeiou\W]/.match(s.downcase) == nil
+    if (/^[^aeiou\W]/.match(s.downcase) == nil)
         false
     else
         true
@@ -37,30 +37,21 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-    
-   # value = s.to_i(2);
     #example: "1100101".to_i(2) => gives 101
-#    if s=="0"
- #       true
-  #  end
-    
-   # if value<4
-    #    false
-    #elsif value%4==0
-     #   true
-    #else
-    #    false
 
-    #end
-    value = /[^01]/
-    if(value==s)
-        false
-    elsif(s.to_i(2) %4 ==0)
+    val = s.to_i(2)
+    if s == "0"
+      true
+    elsif val<4
+      false
+    else #val>4 and != "0"
+      if val % 4 == 0 #check if multiple of 4
         true
-    else
-        false
+      else
+        return false
+      end
     end
-end
+  end
 
 # Part 3
 
