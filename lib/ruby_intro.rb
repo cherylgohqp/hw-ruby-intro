@@ -38,7 +38,6 @@ end
 
 def binary_multiple_of_4? s
     #example: "1100101".to_i(2) => gives 101
-
     val = s.to_i(2)
     if s == "0"
       true
@@ -56,5 +55,22 @@ def binary_multiple_of_4? s
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+    attr_accessor :isbn
+    attr_accessor :price
+
+    def initialize (isbn,price)
+        if(isbn.empty? == true)
+            raise ArgumentError.new('isbn is empty!')
+        end
+        if(price<=0)
+            raise ArgumentError.new('price is < 0!')
+        end
+        @isbn=isbn
+        @price=price
+    end
+    
+    def price_as_string
+        sprintf("$%.2f",@price) #returns the string from any string applied formatting
+    end
 end
+
